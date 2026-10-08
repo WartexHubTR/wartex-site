@@ -641,7 +641,30 @@
             background: #3f3f46;
         }
     </style>
-</head>
+<style id="wartex-intro-sequence-fix">
+/* Smooth 8-second intro sequence: original visuals, updated content */
+#wartexIntro{animation-duration:8s!important;animation-delay:0s!important}
+#wartexIntro .wartex-scene-one{animation-duration:8s!important}
+#wartexIntro .wartex-scene-two{animation-duration:8s!important}
+#wartexIntro .wartex-scene-three{animation-duration:8s!important}
+@keyframes sceneTwo{0%,30%{opacity:0;transform:scale(.96) translateY(35px)}38%{opacity:1;transform:scale(1) translateY(0)}62%{opacity:1;transform:scale(1) translateY(0)}68%{opacity:0;transform:scale(1.04) translateY(-20px)}100%{opacity:0}}
+#wartexIntro .wartex-executor-side h2{animation-delay:3s!important}
+#wartexIntro .executor-left-1{animation-delay:3.25s!important}
+#wartexIntro .executor-left-2{animation-delay:3.45s!important}
+#wartexIntro .executor-left-3{animation-delay:3.65s!important}
+#wartexIntro .executor-left-4{animation-delay:3.85s!important}
+#wartexIntro .executor-left-5{animation-delay:4.05s!important}
+#wartexIntro .executor-left-5[style]{animation-delay:4.25s!important}
+#wartexIntro .executor-footer{animation-delay:4.45s!important}
+#wartexIntro .wartex-scene-three{animation:sceneThreeFast 8s ease forwards!important}
+#wartexIntro .wartex-product-card{animation-delay:5.2s!important}
+#wartexIntro .product-card-2{animation-delay:5.45s!important}
+#wartexIntro .product-card-3{animation-delay:5.7s!important}
+#wartexIntro .product-card-4{animation-delay:5.95s!important}
+#wartexIntro .products-end{display:none!important}
+@keyframes sceneThreeFast{0%,60%{opacity:0;transform:scale(.96) translateY(35px)}67%{opacity:1;transform:scale(1) translateY(0)}94%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(1.02) translateY(-10px)}}
+@media(max-width:700px){#wartexIntro .wartex-products-intro{width:min(92vw,520px)}}
+</style></head>
 
 <body class="min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-white">
 
