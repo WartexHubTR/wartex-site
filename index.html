@@ -9554,7 +9554,7 @@ function wartexCopyScript(script) {
 
     animation:
         transitionLine
-        30s
+        8s
         ease
         forwards;
 
@@ -10453,7 +10453,7 @@ function wartexCopyScript(script) {
 
     animation:
         loadingFade
-        30s
+        8s
         ease
         forwards;
 
@@ -10483,7 +10483,7 @@ function wartexCopyScript(script) {
 
     animation:
         loadingProgress
-        28s
+        7.5s
         linear
         forwards;
 
@@ -10854,14 +10854,14 @@ function wartexCopyScript(script) {
      * WARTEX INTRO DURATION
      *
      * Intro:
-     * 30 seconds
+     * 8 seconds
      *
      * DOM removal:
-     * 32 seconds
+     * 8 seconds
      * =====================================================
      */
 
-    const WARtexIntroDuration = 32000;
+    const WARtexIntroDuration = 8000;
 
 
     setTimeout(function () {
@@ -10962,6 +10962,19 @@ function wartexCopyScript(script) {
 
 })();
 
+</script>
+
+
+<style>
+#wartexIntroSkip{position:fixed;top:18px;right:18px;z-index:999999;display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid rgba(255,255,255,.28);border-radius:10px;background:rgba(10,10,12,.82);color:#fff;font:800 11px/1 Inter,sans-serif;letter-spacing:.12em;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.35);transition:.2s ease}
+#wartexIntroSkip:hover{background:#fff;color:#000;transform:translateY(-1px)}
+@media(max-width:800px){#wartexIntroSkip{top:12px;right:12px;padding:9px 12px;font-size:10px}}
+</style>
+<script>
+(function(){
+ function setupSkip(){const intro=document.getElementById('wartexIntro');if(!intro||document.getElementById('wartexIntroSkip'))return;const b=document.createElement('button');b.id='wartexIntroSkip';b.type='button';b.innerHTML='<i class="fa-solid fa-forward"></i><span>SKIP INTRO</span>';b.addEventListener('click',function(){intro.style.transition='opacity .35s ease';intro.style.opacity='0';setTimeout(function(){if(intro&&intro.parentNode)intro.remove()},350)});intro.appendChild(b)}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupSkip);else setupSkip();
+})();
 </script>
 
 <!-- =========================================================
