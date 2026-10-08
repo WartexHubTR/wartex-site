@@ -6689,7 +6689,7 @@ function wartexCopyScript(script) {
      TOTAL DURATION: 30 SECONDS
 ========================================================= -->
 
-<div id="wartexIntro">
+<div id="wartexIntro"><button id="wartexIntroSkip" onclick="(function(){const x=document.getElementById('wartexIntro');if(x){x.style.animation='none';x.style.opacity='0';x.style.visibility='hidden';x.style.pointerEvents='none';}})()" aria-label="Skip intro"><i class="fa-solid fa-forward"></i> SKIP INTRO</button>
 
 ```
 <div class="wartex-intro-bg"></div>
@@ -6940,6 +6940,21 @@ function wartexCopyScript(script) {
 </div>
 <div class="executor-footer" style="margin-top:22px;opacity:0;animation-delay:6.45s;"><span></span> WARTEX EXECUTOR <span></span></div>
 </div>
+</section>
+
+<!-- SCENE 3 — WARTEX PRODUCTS -->
+<section class="wartex-scene wartex-scene-three">
+  <div class="wartex-products-intro">
+    <div class="products-kicker"><span></span> WARTEX STORE <span></span></div>
+    <h2>MORE FROM <strong>WARTEX</strong></h2>
+    <div class="wartex-product-grid">
+      <div class="wartex-product-card product-card-1"><div class="product-icon"><i class="fa-solid fa-user"></i></div><b>Roblox Accounts</b><span>Premium Roblox accounts</span></div>
+      <div class="wartex-product-card product-card-2"><div class="product-icon"><i class="fa-solid fa-coins"></i></div><b>Robux Sales</b><span>Robux products &amp; services</span></div>
+      <div class="wartex-product-card product-card-3"><div class="product-icon"><i class="fa-solid fa-shield-halved"></i></div><b>Spoofer</b><span>WARTEX Spoofer</span></div>
+      <div class="wartex-product-card product-card-4"><div class="product-icon"><i class="fa-solid fa-code"></i></div><b>Script Sales</b><span>Premium scripts &amp; tools</span></div>
+    </div>
+    <div class="products-end">WARTEX <strong>ECOSYSTEM</strong></div>
+  </div>
 </section>
 
 <div class="wartex-loading">
@@ -11349,6 +11364,37 @@ function wartexCopyScript(script) {
 #wartexIntro .wartex-new-intro-content{display:flex!important;opacity:1!important;visibility:visible!important;animation:wartexIntroContent .8s cubic-bezier(.2,.8,.2,1) .15s both!important}
 @keyframes wartexFinalIntroExit{to{opacity:0;visibility:hidden;pointer-events:none}}
 @media(prefers-reduced-motion:reduce){#wartexIntro{display:flex!important;animation:wartexFinalIntroExit .5s ease 7.5s forwards!important}.wartex-new-intro-content{animation:none!important}}
+<style id="wartex-intro-product-style">
+/* WARTEX intro: monochrome + product scene */
+#wartexIntro .wartex-executor-side,
+#wartexIntro .wartex-products-intro{color:#fff}
+#wartexIntro .executor-header span,
+#wartexIntro .products-kicker span{background:#71717a!important}
+#wartexIntro .wartex-executor-side h2 strong,
+#wartexIntro .executor-icon,
+#wartexIntro .wartex-products-intro h2 strong,
+#wartexIntro .products-end strong{color:#fff!important}
+#wartexIntro .executor-divider b{color:#a1a1aa}
+#wartexIntro .status-dot{background:#fff!important;box-shadow:0 0 14px rgba(255,255,255,.7)!important}
+#wartexIntro .wartex-intro-bg{background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.08),transparent 30%),radial-gradient(circle at 10% 20%,rgba(255,255,255,.035),transparent 25%),radial-gradient(circle at 90% 80%,rgba(255,255,255,.04),transparent 30%),#08080a!important}
+.wartex-scene-three{opacity:0;transform:scale(.96);animation:sceneThree 30s ease forwards}
+.wartex-products-intro{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(900px,90vw);text-align:center}
+.products-kicker{display:flex;justify-content:center;align-items:center;gap:12px;color:#71717a;font-size:9px;letter-spacing:3px;font-weight:800}
+.products-kicker span{width:35px;height:1px;background:#71717a}
+.wartex-products-intro h2{margin:20px 0 30px;font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-3px;color:#f4f4f5}
+.wartex-product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wartex-product-card{min-height:145px;padding:18px 12px;border:1px solid #27272a;border-radius:14px;background:rgba(15,15,17,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;opacity:0;transform:translateY(25px);animation:productCardIn .8s ease forwards}
+.product-card-1{animation-delay:22s}.product-card-2{animation-delay:22.3s}.product-card-3{animation-delay:22.6s}.product-card-4{animation-delay:22.9s}
+.product-icon{width:43px;height:43px;border:1px solid #3f3f46;border-radius:11px;display:flex;align-items:center;justify-content:center;background:#0b0b0d;color:#fff}
+.wartex-product-card b{font-size:12px;color:#f4f4f5}.wartex-product-card span{font-size:9px;color:#71717a}
+.products-end{margin-top:28px;color:#71717a;font-size:9px;font-weight:900;letter-spacing:4px;opacity:0;animation:productEndIn .8s ease 24s forwards}
+@keyframes sceneThree{0%,70%{opacity:0;transform:scale(.96) translateY(35px)}76%{opacity:1;transform:scale(1) translateY(0)}96%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(1.04) translateY(-20px)}}
+@keyframes productCardIn{to{opacity:1;transform:none}}
+@keyframes productEndIn{to{opacity:1}}
+#wartexIntroSkip{position:absolute;right:22px;top:20px;z-index:100;display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #3f3f46;border-radius:10px;background:rgba(8,8,8,.9);color:#fff;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:background .15s,border-color .15s}
+#wartexIntroSkip:hover{background:#fff;color:#000;border-color:#fff}
+@media(max-width:700px){.wartex-product-grid{grid-template-columns:repeat(2,1fr)}.wartex-product-card{min-height:125px}.products-kicker{font-size:8px}.wartex-products-intro h2{font-size:34px}}
+</style>
 </style>
 const WARtexIntroDuration = 8000;
 
