@@ -641,7 +641,15 @@
             background: #3f3f46;
         }
     </style>
-</head>
+<style id="wartex-intro-final-fix">
+#wartexIntro{z-index:2147483647!important;animation:none!important}
+#wartexIntro .wartex-intro-skip{position:absolute;right:20px;top:18px;z-index:2147483647;display:flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid #555;border-radius:9px;background:#090909;color:#fff;font:900 10px Inter,Arial,sans-serif;letter-spacing:.08em;cursor:pointer}
+#wartexIntro .wartex-intro-skip:hover{background:#fff;color:#000}
+#wartexIntro .wartex-scene{filter:none!important}
+#wartexIntro [class*="purple"],#wartexIntro [style*="#8B5CF6"],#wartexIntro [style*="#8b5cf6"]{color:#fff!important;background-color:transparent}
+#wartexIntro .wartex-intro-bg{background:#050505!important}
+#wartexIntro .wartex-scene *{--purple:#fff!important;--accent:#fff!important}
+</style></head>
 
 <body class="min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-white">
 
@@ -6665,7 +6673,7 @@ function wartexCopyScript(script) {
                 "flex items-center gap-2";
 
             notification.innerHTML =
-                '<i class="fa-solid fa-check"></i>' +
+                '<i class="fa-solid fa-check"><button class="wartex-intro-skip" type="button" onclick="window.skipWartexIntro&&window.skipWartexIntro()"><i class="fa-solid fa-forward"></i> SKIP INTRO</button></i>' +
                 ' Script kodu kopyalandı!';
 
             document.body.appendChild(notification);
@@ -11740,5 +11748,30 @@ const WARtexIntroDuration = 8000;
      WARTEX SCRIPT HUB INTRO END
 ========================================================= -->
 
-</body>
+<script id="wartex-intro-final-script">
+(function(){
+  const intro=document.getElementById('wartexIntro');
+  if(!intro)return;
+  let done=false;
+  function finish(){
+    if(done)return; done=true;
+    intro.style.opacity='0';
+    intro.style.visibility='hidden';
+    intro.style.pointerEvents='none';
+    intro.style.display='none';
+    document.body.classList.remove('intro-active','wartex-intro-active');
+    const home=document.querySelector('#home, #homeSection, .home-section, [data-section="home"]');
+    if(home) home.style.display='';
+    window.dispatchEvent(new CustomEvent('wartexIntroFinished'));
+  }
+  window.skipWartexIntro=finish;
+  const start=performance.now(), duration=8000;
+  function tick(t){
+    if(done)return;
+    if(t-start>=duration){finish();return;}
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script></body>
 </html>
