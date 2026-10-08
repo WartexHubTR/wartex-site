@@ -664,6 +664,28 @@
 #wartexIntro .products-end{display:none!important}
 @keyframes sceneThreeFast{0%,60%{opacity:0;transform:scale(.96) translateY(35px)}67%{opacity:1;transform:scale(1) translateY(0)}94%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:scale(1.02) translateY(-10px)}}
 @media(max-width:700px){#wartexIntro .wartex-products-intro{width:min(92vw,520px)}}
+</style><style id="wartex-final-intro">
+#wartexIntro{background:#050505!important;color:#fff!important;z-index:2147483647}
+#wartexIntro .wartex-scene{animation-duration:inherit}
+#wartexIntro .wartex-scene-one{animation:wartexScene1 5.5s ease both!important}
+#wartexIntro .wartex-scene-two{animation:wartexScene2 5.5s ease 5s both!important}
+#wartexIntro .wartex-scene-three{animation:wartexScene3 5s ease 10s both!important}
+#wartexIntro .wartex-loading{animation:wartexLoading 1s ease 14s both!important}
+#wartexIntro .wartex-intro-bg{background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.08),transparent 40%),#050505!important}
+#wartexIntro .wartex-grid{opacity:.15!important}
+#wartexIntro .wartex-particles span{background:#fff!important}
+#wartexIntroSkip{position:absolute!important;right:20px!important;top:18px!important;z-index:9999!important;background:#080808!important;color:#fff!important;border:1px solid #52525b!important;border-radius:9px!important;padding:9px 13px!important;font-size:10px!important;font-weight:900!important;cursor:pointer!important}
+#wartexIntroSkip:hover{background:#fff!important;color:#000!important}
+.wartex-scene-one .wartex-script-float{animation-duration:5.5s!important}
+.wartex-executor-side{left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:min(620px,90vw)!important}
+.wartex-executor-side .executor-left-1{animation-delay:5.35s!important}.wartex-executor-side .executor-left-2{animation-delay:5.55s!important}.wartex-executor-side .executor-left-3{animation-delay:5.75s!important}.wartex-executor-side .executor-left-4{animation-delay:5.95s!important}.wartex-executor-side .executor-left-5{animation-delay:6.15s!important}
+.wartex-products-intro{left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:min(900px,90vw)!important}
+.wartex-product-card{animation-duration:.55s!important}.product-card-1{animation-delay:10.35s!important}.product-card-2{animation-delay:10.55s!important}.product-card-3{animation-delay:10.75s!important}.product-card-4{animation-delay:10.95s!important}
+@keyframes wartexScene1{0%{opacity:0;transform:scale(.98)}8%,38%{opacity:1;transform:scale(1)}48%,100%{opacity:0;transform:scale(1.02)}}
+@keyframes wartexScene2{0%,10%{opacity:0;transform:scale(.98)}20%,75%{opacity:1;transform:scale(1)}90%,100%{opacity:0;transform:scale(1.02)}}
+@keyframes wartexScene3{0%,10%{opacity:0;transform:scale(.98)}22%,78%{opacity:1;transform:scale(1)}92%,100%{opacity:0;transform:scale(1.02)}}
+@keyframes wartexLoading{from{opacity:0}to{opacity:1}}
+@media(max-width:700px){.wartex-product-grid{grid-template-columns:repeat(2,1fr)!important}.wartex-products-intro h2{font-size:34px!important}.wartex-executor-side h2{font-size:34px!important}}
 </style></head>
 
 <body class="min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-white">
@@ -6712,289 +6734,44 @@ function wartexCopyScript(script) {
      TOTAL DURATION: 30 SECONDS
 ========================================================= -->
 
-<div id="wartexIntro"><button id="wartexIntroSkip" onclick="(function(){const x=document.getElementById('wartexIntro');if(x){x.style.animation='none';x.style.opacity='0';x.style.visibility='hidden';x.style.pointerEvents='none';}})()" aria-label="Skip intro"><i class="fa-solid fa-forward"></i> SKIP INTRO</button>
-
-```
-<div class="wartex-intro-bg"></div>
-<div class="wartex-grid"></div>
-
-<!-- PARTICLES -->
-<div class="wartex-particles">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-</div>
-
-
-<!-- =====================================================
-     SCENE 1 — SCRIPT HUB
-====================================================== -->
+<div id="wartexIntro">
+<button id="wartexIntroSkip" onclick="(function(){const x=document.getElementById('wartexIntro');if(x){x.style.animation='none';x.style.opacity='0';x.style.visibility='hidden';x.style.pointerEvents='none';}})()" aria-label="Skip intro"><i class="fa-solid fa-forward"></i> SKIP INTRO</button>
+<div class="wartex-intro-bg"></div><div class="wartex-grid"></div>
+<div class="wartex-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
 <section class="wartex-scene wartex-scene-one">
-
-    <div class="wartex-center-intro">
-
-        <div class="wartex-top-line">
-            <span></span>
-            ROBLOX SCRIPT NETWORK
-            <span></span>
-        </div>
-
-
-        <div class="wartex-main-logo">
-
-            <div class="wartex-logo-box">
-
-                <img
-                    src="/favicon.ico"
-                    alt="WARTEX"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                >
-
-                <div class="wartex-logo-fallback">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-
-            </div>
-
-
-            <div class="wartex-logo-title">
-                WARTEX
-                <strong>SCRIPT HUB</strong>
-            </div>
-
-        </div>
-
-
-        <div class="wartex-tagline">
-
-            <span>THE SAFEST</span>
-
-            <i></i>
-
-            <span>THE FASTEST</span>
-
-            <i></i>
-
-            <span>THE MOST POPULAR SCRIPTS</span>
-
-        </div>
-
-
-        <div class="wartex-center-status">
-
-            <span class="status-dot"></span>
-
-            SYSTEM INITIALIZING
-
-            <span class="status-line"></span>
-
-            <span>01</span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 1
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-1">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-gamepad"></i>
-        </div>
-
-        <div>
-            <strong>BLOX FRUITS</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 2
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-2">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-skull"></i>
-        </div>
-
-        <div>
-            <strong>FALLEN SURVIVAL</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 3
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-3">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-door-open"></i>
-        </div>
-
-        <div>
-            <strong>DOORS</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 4
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-4">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-mask-face"></i>
-        </div>
-
-        <div>
-            <strong>MURDER MYSTERY 2</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 5
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-5">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-house"></i>
-        </div>
-
-        <div>
-            <strong>BROOKHAVEN</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GAME 6
-    ================================================== -->
-
-    <div class="wartex-script-float wartex-script-6">
-
-        <div class="script-icon">
-            <i class="fa-solid fa-brain"></i>
-        </div>
-
-        <div>
-            <strong>STEAL A BRAINROT</strong>
-            <span>SCRIPT</span>
-        </div>
-
-        <i class="fa-solid fa-code script-code"></i>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     TRANSITION
-====================================================== -->
-
-<div class="wartex-transition">
-
-    <div class="transition-line"></div>
-
-    <div class="transition-flash"></div>
-
+<div class="wartex-center-intro">
+<div class="wartex-top-line"><span></span> WARTEX SCRIPT HUB <span></span></div>
+<div class="wartex-main-logo"><div class="wartex-logo-box"><img src="/favicon.ico" alt="WARTEX" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="wartex-logo-fallback"><i class="fa-solid fa-code"></i></div></div><div class="wartex-logo-title">WARTEX <strong>SCRIPT HUB</strong></div></div>
+<div class="wartex-tagline"><span>FREE SCRIPT HUB</span><i></i><span>SCRIPT LIBRARY</span><i></i><span>FAST &amp; EASY</span></div>
+<div class="wartex-center-status"><span class="status-dot"></span>SYSTEM INITIALIZING<span class="status-line"></span><span>01</span></div>
 </div>
-
-
-
-<!-- =====================================================
-     SCENE 2 — EXECUTORS
-====================================================== -->
+<div class="wartex-script-float wartex-script-1"><div class="script-icon"><i class="fa-solid fa-code"></i></div><div><strong>SCRIPT LIBRARY</strong><span>WARTEX</span></div><i class="fa-solid fa-code script-code"></i></div>
+<div class="wartex-script-float wartex-script-2"><div class="script-icon"><i class="fa-solid fa-gamepad"></i></div><div><strong>ROBLOX SCRIPTS</strong><span>FREE</span></div><i class="fa-solid fa-code script-code"></i></div>
+<div class="wartex-script-float wartex-script-3"><div class="script-icon"><i class="fa-solid fa-bolt"></i></div><div><strong>FAST ACCESS</strong><span>SCRIPT HUB</span></div><i class="fa-solid fa-code script-code"></i></div>
+</section>
 
 <section class="wartex-scene wartex-scene-two">
-<div class="wartex-executor-side" style="width:min(520px,90vw);left:50%;transform:translate(-50%,-50%);">
-<div class="executor-header" style="justify-content:center;"><span></span> WARTEX EXECUTOR <span></span></div>
-<h2 style="text-align:center;">WARTEX <strong>EXECUTOR</strong></h2>
-<div class="wartex-executor-list" style="gap:9px;">
-<div class="wartex-executor-card executor-left-1"><div class="executor-icon"><i class="fa-solid fa-bolt"></i></div><div class="executor-info"><strong>WARTEX EXECUTOR</strong><span>EXECUTOR</span></div><i class="fa-solid fa-circle-check executor-arrow"></i></div>
-<div class="executor-divider"><span></span><b>FEATURES</b><span></span></div>
-<div class="wartex-executor-card executor-left-2"><div class="executor-icon"><i class="fa-solid fa-chart-line"></i></div><div class="executor-info"><strong>%88 UNC</strong><span>UNC LEVEL</span></div></div>
-<div class="wartex-executor-card executor-left-3"><div class="executor-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="executor-info"><strong>ADVANCED BYFRON BYPASS</strong><span>PROTECTION</span></div></div>
-<div class="wartex-executor-card executor-left-4"><div class="executor-icon"><i class="fa-solid fa-key"></i></div><div class="executor-info"><strong>KEY SYSTEM</strong><span>ACCESS SYSTEM</span></div></div>
-<div class="wartex-executor-card executor-left-5"><div class="executor-icon"><i class="fa-solid fa-code"></i></div><div class="executor-info"><strong>SCRIPT HUB</strong><span>INTEGRATED</span></div></div>
-<div class="wartex-executor-card executor-left-5" style="animation-delay:6.25s;"><div class="executor-icon"><i class="fa-solid fa-sliders"></i></div><div class="executor-info"><strong>ADVANCED CUSTOMIZABLE UI</strong><span>FULLY CUSTOMIZABLE</span></div></div>
-</div>
-<div class="executor-footer" style="margin-top:22px;opacity:0;animation-delay:6.45s;"><span></span> WARTEX EXECUTOR <span></span></div>
-</div>
-</section>
+<div class="wartex-executor-side"><div class="executor-header"><span></span> WARTEX EXECUTOR <span></span></div>
+<h2>WARTEX <strong>EXECUTOR</strong></h2><div class="wartex-executor-list">
+<div class="wartex-executor-card executor-left-1"><div class="executor-icon"><i class="fa-solid fa-chart-line"></i></div><div class="executor-info"><strong>%88 UNC</strong><span>UNC LEVEL</span></div></div>
+<div class="wartex-executor-card executor-left-2"><div class="executor-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="executor-info"><strong>ADVANCED BYFRON BYPASS</strong><span>PROTECTION</span></div></div>
+<div class="wartex-executor-card executor-left-3"><div class="executor-icon"><i class="fa-solid fa-key"></i></div><div class="executor-info"><strong>KEY SYSTEM</strong><span>ACCESS SYSTEM</span></div></div>
+<div class="wartex-executor-card executor-left-4"><div class="executor-icon"><i class="fa-solid fa-code"></i></div><div class="executor-info"><strong>SCRIPT HUB</strong><span>INTEGRATED</span></div></div>
+<div class="wartex-executor-card executor-left-5"><div class="executor-icon"><i class="fa-solid fa-sliders"></i></div><div class="executor-info"><strong>ADVANCED CUSTOMIZABLE UI</strong><span>FULLY CUSTOMIZABLE</span></div></div>
+</div></div></section>
 
-<!-- SCENE 3 — WARTEX PRODUCTS -->
 <section class="wartex-scene wartex-scene-three">
-  <div class="wartex-products-intro">
-    <div class="products-kicker"><span></span> WARTEX STORE <span></span></div>
-    <h2>MORE FROM <strong>WARTEX</strong></h2>
-    <div class="wartex-product-grid">
-      <div class="wartex-product-card product-card-1"><div class="product-icon"><i class="fa-solid fa-user"></i></div><b>Roblox Accounts</b><span>Premium Roblox accounts</span></div>
-      <div class="wartex-product-card product-card-2"><div class="product-icon"><i class="fa-solid fa-coins"></i></div><b>Robux Sales</b><span>Robux products &amp; services</span></div>
-      <div class="wartex-product-card product-card-3"><div class="product-icon"><i class="fa-solid fa-shield-halved"></i></div><b>Spoofer</b><span>WARTEX Spoofer</span></div>
-      <div class="wartex-product-card product-card-4"><div class="product-icon"><i class="fa-solid fa-code"></i></div><b>Script Sales</b><span>Premium scripts &amp; tools</span></div>
-    </div>
-    <div class="products-end">WARTEX <strong>ECOSYSTEM</strong></div>
-  </div>
-</section>
+<div class="wartex-products-intro"><div class="products-kicker"><span></span> WARTEX STORE <span></span></div><h2>WARTEX <strong>STORE</strong></h2>
+<div class="wartex-product-grid">
+<div class="wartex-product-card product-card-1"><div class="product-icon"><i class="fa-solid fa-user"></i></div><b>ROBLOX ACCOUNTS</b><span>ACCOUNTS</span></div>
+<div class="wartex-product-card product-card-2"><div class="product-icon"><i class="fa-solid fa-coins"></i></div><b>ROBUX SALES</b><span>ROBUX</span></div>
+<div class="wartex-product-card product-card-3"><div class="product-icon"><i class="fa-solid fa-shield-halved"></i></div><b>SPOOFER</b><span>WARTEX SPOOFER</span></div>
+<div class="wartex-product-card product-card-4"><div class="product-icon"><i class="fa-solid fa-code"></i></div><b>SCRIPT SALES</b><span>PREMIUM SCRIPTS</span></div>
+</div></div></section>
 
-<div class="wartex-loading">
-
-    <div class="loading-bar">
-
-        <div></div>
-
-    </div>
-
-    <span>INITIALIZING WARTEX SCRIPT HUB</span>
-
+<div class="wartex-loading"><div class="loading-bar"><div></div></div><span>INITIALIZING WARTEX</span></div>
 </div>
-```
-
-</div>
-
 <style>
 
 /* =========================================================
