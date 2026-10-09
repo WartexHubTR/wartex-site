@@ -857,6 +857,9 @@ function toggleVipBenefits(button){
 .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .product-card-4{animation-delay:5.46s!important}
 .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .products-end{margin-top:10px!important;font-size:7px!important;letter-spacing:1.5px!important;animation-delay:6.55s!important;animation-duration:.3s!important}
 
+/* Keep the animated preview text in its original layout when the rest of the page is translated. */
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"],
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] *{translate:none!important}
 /* Prevent MOBILE EXECUTORS / PC EXECUTORS labels and their descriptions from colliding in the small home preview. */
 .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-scene-two .wartex-executor-side{
   left:5%!important;top:48%!important;width:43%!important;max-width:43%!important;min-width:0!important;
@@ -1118,7 +1121,7 @@ function toggleVipBenefits(button){
     <div class="wartex-store-scene-foot"><span></span> WARTEX STORE <span></span></div>
   </div>
 </section>
-  <section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
+  <section class="wartex-home-showcase notranslate" translate="no" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
 </div>
 
 
