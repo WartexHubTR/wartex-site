@@ -895,9 +895,60 @@ function toggleVipBenefits(button){
 .wartex-home-showcase{height:300px;min-height:300px}
 .wartex-home-showcase #wartexIntro{width:200%!important;height:200%!important;transform:scale(.5)!important}
 }
+
+/* Matching WARTEX services showcase */
+.wartex-services-showcase{position:relative;isolation:isolate;overflow:hidden;padding:clamp(12px,1.5vw,20px);color:#fff}
+.wartex-services-showcase:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.12),transparent 52%),linear-gradient(145deg,#111114,#050506 70%)}
+.wartex-services-showcase:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:25px 25px;mask-image:linear-gradient(to bottom,black,transparent 95%)}
+.wartex-services-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.wartex-services-particles i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 9px rgba(255,255,255,.8);opacity:0;animation:wartexServiceParticle 5s linear infinite}
+.wartex-services-particles i:nth-child(1){left:9%;top:80%;animation-delay:0s}.wartex-services-particles i:nth-child(2){left:25%;top:70%;animation-delay:1s}.wartex-services-particles i:nth-child(3){left:49%;top:90%;animation-delay:2s}.wartex-services-particles i:nth-child(4){left:70%;top:85%;animation-delay:1.5s}.wartex-services-particles i:nth-child(5){left:88%;top:76%;animation-delay:3s}.wartex-services-particles i:nth-child(6){left:58%;top:65%;animation-delay:2.5s}
+.wartex-services-topline{display:flex;align-items:center;justify-content:center;gap:7px;color:#a1a1aa;font-size:clamp(6px,.65vw,9px);font-weight:900;letter-spacing:.17em;white-space:nowrap;animation:wartexServiceFade 4.2s ease-in-out infinite}
+.wartex-services-topline span{width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff;animation:wartexServicePulse 1.6s ease-in-out infinite}
+.wartex-services-brand{display:flex;justify-content:center;align-items:center;gap:9px;margin:clamp(10px,1.4vw,18px) 0 clamp(10px,1.3vw,16px);animation:wartexServiceBrand 4.2s ease-in-out infinite}
+.wartex-services-logo{display:grid;place-items:center;flex:0 0 clamp(28px,3vw,42px);width:clamp(28px,3vw,42px);height:clamp(28px,3vw,42px);border:1px solid #45454b;border-radius:10px;background:linear-gradient(145deg,#202024,#080809);box-shadow:0 0 24px rgba(255,255,255,.08)}
+.wartex-services-logo i{font-size:clamp(14px,1.5vw,21px)}
+.wartex-services-wordmark{font-size:clamp(17px,2.1vw,29px);font-weight:950;letter-spacing:-.06em;line-height:.95}
+.wartex-services-wordmark small{display:block;margin-top:5px;color:#a1a1aa;font-size:clamp(6px,.65vw,9px);font-weight:800;letter-spacing:.2em}
+.wartex-services-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(5px,.7vw,9px)}
+.wartex-service-tile{display:flex;align-items:center;gap:clamp(5px,.65vw,9px);min-width:0;padding:clamp(7px,.9vw,12px) clamp(6px,.8vw,10px);border:1px solid #303036;border-radius:9px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.015));box-shadow:inset 0 1px rgba(255,255,255,.035);animation:wartexServiceTile 4.2s ease-in-out infinite;animation-delay:var(--service-delay,0s)}
+.wartex-service-tile i{display:grid;place-items:center;flex:0 0 clamp(20px,2vw,29px);width:clamp(20px,2vw,29px);height:clamp(20px,2vw,29px);border:1px solid #44444b;border-radius:7px;background:#17171b;color:#fff;font-size:clamp(9px,.9vw,13px)}
+.wartex-service-tile strong{display:block;overflow-wrap:anywhere;font-size:clamp(7px,.78vw,11px);font-weight:900;line-height:1.25;letter-spacing:.015em}
+.wartex-service-tile small{display:block;margin-top:3px;color:#a1a1aa;font-size:clamp(5px,.57vw,8px);line-height:1.25}
+.wartex-service-tile:nth-child(1){--service-delay:0s}.wartex-service-tile:nth-child(2){--service-delay:.15s}.wartex-service-tile:nth-child(3){--service-delay:.3s}.wartex-service-tile:nth-child(4){--service-delay:.45s}
+.wartex-services-footer{position:relative;margin-top:clamp(8px,1vw,13px);padding:clamp(8px,.9vw,12px);border:1px solid #45454b;border-radius:9px;background:linear-gradient(90deg,rgba(255,255,255,.09),rgba(255,255,255,.025));text-align:center;animation:wartexServiceFinal 4.2s ease-in-out infinite}
+.wartex-services-footer strong{display:block;font-size:clamp(8px,.9vw,13px);font-weight:950;letter-spacing:.025em}
+.wartex-services-footer span{display:block;margin-top:4px;color:#d4d4d8;font-size:clamp(6px,.63vw,9px);line-height:1.35}
+.wartex-services-footer .wartex-services-live{display:inline-block;width:5px;height:5px;margin-right:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff;vertical-align:middle}
+@keyframes wartexServiceParticle{0%{transform:translateY(25px) scale(.5);opacity:0}30%{opacity:.8}100%{transform:translateY(-110px) scale(1.2);opacity:0}}
+@keyframes wartexServicePulse{50%{opacity:.35;box-shadow:0 0 3px #fff}}
+@keyframes wartexServiceFade{0%,100%{opacity:.65}50%{opacity:1}}
+@keyframes wartexServiceBrand{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes wartexServiceTile{0%,100%{border-color:#303036;background-color:rgba(255,255,255,.025)}50%{border-color:#64646d;background-color:rgba(255,255,255,.07)}}
+@keyframes wartexServiceFinal{0%,65%,100%{box-shadow:0 0 0 rgba(255,255,255,0)}80%{box-shadow:0 0 22px rgba(255,255,255,.12)}}
+@media(max-width:800px){.wartex-services-showcase{padding:12px}.wartex-services-brand{margin:10px 0}.wartex-service-tile{padding:7px 6px}.wartex-services-footer{margin-top:8px}}
+@media(max-width:430px){.wartex-services-showcase{padding:9px}.wartex-services-topline{letter-spacing:.09em}.wartex-services-brand{gap:6px}.wartex-services-list{gap:5px}.wartex-service-tile{gap:5px;padding:6px 5px}.wartex-service-tile small{display:none}.wartex-services-footer span{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.wartex-services-particles i,.wartex-services-topline,.wartex-services-topline span,.wartex-services-brand,.wartex-service-tile,.wartex-services-footer{animation:none!important}}
 </style>
 <div class="wartex-home-showcase-row" aria-label="WARTEX showcases">
-  <div class="wartex-home-showcase-reserved" aria-hidden="true"></div>
+  <section class="wartex-home-showcase wartex-services-showcase" aria-label="WARTEX services and security">
+  <div class="wartex-services-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wartex-services-topline"><span></span> WARTEX NETWORK <span style="opacity:.45">/</span> SERVICES</div>
+  <div class="wartex-services-brand">
+    <div class="wartex-services-logo"><i class="fa-solid fa-bolt"></i></div>
+    <div class="wartex-services-wordmark">WARTEX<small>PREMIUM DIGITAL SERVICES</small></div>
+  </div>
+  <div class="wartex-services-list">
+    <div class="wartex-service-tile"><i class="fa-solid fa-crown"></i><div><strong>VIP SALES</strong><small>Exclusive benefits</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-coins"></i><div><strong>ROBUX SALES</strong><small>Robux marketplace</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-user-shield"></i><div><strong>ROBLOX ACCOUNTS</strong><small>Account marketplace</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-mask"></i><div><strong>SPOOFER SERVICES</strong><small>Tools and support</small></div></div>
+  </div>
+  <div class="wartex-services-footer">
+    <strong><span class="wartex-services-live"></span>SECURITY · SUPPORT · FAST UPDATES</strong>
+    <span>Script Hub &amp; Executor — updated and improved every day</span>
+  </div>
+</section>
   <section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
 </div>
 
