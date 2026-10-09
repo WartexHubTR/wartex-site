@@ -897,6 +897,38 @@ function toggleVipBenefits(button){
 }
 
 /* Matching WARTEX services showcase */
+.wartex-store-showcase{padding:clamp(10px,1.2vw,16px)}
+.wartex-store-showcase .wartex-services-brand{margin:clamp(7px,.8vw,11px) 0}
+.wartex-store-showcase .wartex-services-wordmark{font-size:clamp(14px,1.75vw,24px)}
+.wartex-store-showcase .wartex-services-wordmark small{font-size:clamp(5px,.55vw,8px)}
+.wartex-store-section-label{display:flex;align-items:center;gap:7px;margin:clamp(7px,.8vw,11px) 0 6px;color:#f4f4f5;font-size:clamp(7px,.7vw,10px);font-weight:950;letter-spacing:.08em}
+.wartex-store-section-label i{color:#a1a1aa;font-size:clamp(8px,.8vw,11px)}
+.wartex-store-vip-label{margin-top:clamp(8px,1vw,13px)}
+.wartex-store-list{gap:clamp(4px,.5vw,7px)}
+.wartex-store-list .wartex-service-tile{padding:clamp(5px,.65vw,9px) clamp(5px,.65vw,9px);gap:clamp(4px,.55vw,7px)}
+.wartex-store-list .wartex-service-tile i{flex-basis:clamp(18px,1.65vw,24px);width:clamp(18px,1.65vw,24px);height:clamp(18px,1.65vw,24px);font-size:clamp(8px,.72vw,10px)}
+.wartex-store-list .wartex-service-tile strong{font-size:clamp(6px,.62vw,9px)}
+.wartex-store-list .wartex-service-tile small{font-size:clamp(5px,.49vw,7px);margin-top:2px}
+.wartex-store-showcase .wartex-services-footer{margin-top:clamp(7px,.8vw,11px);padding:clamp(6px,.7vw,9px)}
+.wartex-store-showcase .wartex-services-footer strong{font-size:clamp(7px,.75vw,10px)}
+.wartex-store-showcase .wartex-services-footer span{font-size:clamp(5px,.52vw,7px)}
+.wartex-store-showcase .wartex-service-tile:nth-child(odd){animation-delay:0s}
+.wartex-store-showcase .wartex-service-tile:nth-child(even){animation-delay:.22s}
+@media(max-width:800px){
+.wartex-store-showcase{padding:9px}
+.wartex-store-showcase .wartex-services-brand{margin:7px 0}
+.wartex-store-section-label{margin:7px 0 5px}
+.wartex-store-list{gap:4px}
+.wartex-store-list .wartex-service-tile{padding:5px 4px;gap:4px}
+.wartex-store-list .wartex-service-tile small{display:block;font-size:6px}
+.wartex-store-showcase .wartex-services-footer{margin-top:7px}
+}
+@media(max-width:430px){
+.wartex-store-showcase .wartex-services-wordmark{font-size:13px}
+.wartex-store-list .wartex-service-tile strong{font-size:6px}
+.wartex-store-list .wartex-service-tile small{font-size:5px}
+}
+
 .wartex-services-showcase{position:relative;isolation:isolate;overflow:hidden;padding:clamp(12px,1.5vw,20px);color:#fff}
 .wartex-services-showcase:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.12),transparent 52%),linear-gradient(145deg,#111114,#050506 70%)}
 .wartex-services-showcase:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:25px 25px;mask-image:linear-gradient(to bottom,black,transparent 95%)}
@@ -931,22 +963,32 @@ function toggleVipBenefits(button){
 @media(prefers-reduced-motion:reduce){.wartex-services-particles i,.wartex-services-topline,.wartex-services-topline span,.wartex-services-brand,.wartex-service-tile,.wartex-services-footer{animation:none!important}}
 </style>
 <div class="wartex-home-showcase-row" aria-label="WARTEX showcases">
-  <section class="wartex-home-showcase wartex-services-showcase" aria-label="WARTEX services and security">
-  <div class="wartex-services-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="wartex-services-topline"><span></span> WARTEX NETWORK <span style="opacity:.45">/</span> SERVICES</div>
+  <section class="wartex-home-showcase wartex-services-showcase wartex-store-showcase" aria-label="WARTEX Store features">
+  <div class="wartex-services-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wartex-services-topline"><span></span> WARTEX NETWORK <span style="opacity:.45">/</span> PREMIUM STORE</div>
   <div class="wartex-services-brand">
     <div class="wartex-services-logo"><i class="fa-solid fa-bolt"></i></div>
-    <div class="wartex-services-wordmark">WARTEX<small>PREMIUM DIGITAL SERVICES</small></div>
+    <div class="wartex-services-wordmark">WARTEX STORE<small>SCRIPT HUB · EXECUTOR · VIP</small></div>
   </div>
-  <div class="wartex-services-list">
-    <div class="wartex-service-tile"><i class="fa-solid fa-crown"></i><div><strong>VIP SALES</strong><small>Exclusive benefits</small></div></div>
-    <div class="wartex-service-tile"><i class="fa-solid fa-coins"></i><div><strong>ROBUX SALES</strong><small>Robux marketplace</small></div></div>
-    <div class="wartex-service-tile"><i class="fa-solid fa-user-shield"></i><div><strong>ROBLOX ACCOUNTS</strong><small>Account marketplace</small></div></div>
-    <div class="wartex-service-tile"><i class="fa-solid fa-mask"></i><div><strong>SPOOFER SERVICES</strong><small>Tools and support</small></div></div>
+  <div class="wartex-store-section-label"><i class="fa-solid fa-code"></i> SCRIPT HUB &amp; EXECUTOR</div>
+  <div class="wartex-services-list wartex-store-list">
+    <div class="wartex-service-tile"><i class="fa-solid fa-wand-magic-sparkles"></i><div><strong>ADVANCED UI</strong><small>Clean, premium interface</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-bolt"></i><div><strong>FAST UPDATES</strong><small>Frequent improvements</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-key"></i><div><strong>PREMIUM KEY SYSTEM</strong><small>License and key features</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-shield-halved"></i><div><strong>COMPATIBILITY UPDATES</strong><small>Ongoing fixes and refinements</small></div></div>
+  </div>
+  <div class="wartex-store-section-label wartex-store-vip-label"><i class="fa-solid fa-crown"></i> VIP MEMBERSHIP</div>
+  <div class="wartex-services-list wartex-store-list wartex-store-vip-list">
+    <div class="wartex-service-tile"><i class="fa-solid fa-id-badge"></i><div><strong>EXCLUSIVE ROLE</strong><small>Special role in WARTEX Discord</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-headset"></i><div><strong>PRIORITY SUPPORT</strong><small>Faster customer assistance</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-gift"></i><div><strong>GIFTS &amp; GIVEAWAYS</strong><small>Exclusive profile looks and perks</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-bullhorn"></i><div><strong>EARLY UPDATES</strong><small>Priority news and announcements</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-lock"></i><div><strong>PRIVATE SERVERS</strong><small>Access to exclusive servers</small></div></div>
+    <div class="wartex-service-tile"><i class="fa-solid fa-comments"></i><div><strong>MEMBERS-ONLY CHAT</strong><small>Private text and voice channels</small></div></div>
   </div>
   <div class="wartex-services-footer">
-    <strong><span class="wartex-services-live"></span>SECURITY · SUPPORT · FAST UPDATES</strong>
-    <span>Script Hub &amp; Executor — updated and improved every day</span>
+    <strong><span class="wartex-services-live"></span>SECURITY · SUPPORT · PREMIUM EXPERIENCE</strong>
+    <span>Script Hub &amp; Executor — updated, refined and improved every day</span>
   </div>
 </section>
   <section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
