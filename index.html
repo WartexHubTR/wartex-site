@@ -693,7 +693,13 @@ function toggleVipBenefits(button){
 
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
 
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
+            <button onclick="toggleWartexSideMenu()" id="wartexHomeButton" aria-label="Menüyü aç" aria-controls="wartexSideMenu" aria-expanded="false" title="Menüyü Aç" class="group flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-[5px] rounded-xl border border-zinc-800 bg-zinc-950/80 text-zinc-200 transition hover:border-zinc-600 hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30">
+                <span class="block h-[2px] w-5 rounded-full bg-current transition-all"></span>
+                <span class="block h-[2px] w-3.5 rounded-full bg-current transition-all group-hover:w-5"></span>
+                <span class="block h-[2px] w-5 rounded-full bg-current transition-all"></span>
+            </button>
+            <div class="flex items-center space-x-4">
 
             <div class="w-14 h-14 bg-zinc-900 border border-zinc-700
                         rounded-2xl flex items-center justify-center
@@ -726,6 +732,7 @@ function toggleVipBenefits(button){
 
             </div>
 
+            </div>
         </div>
 
         <div class="flex items-center space-x-3">
@@ -767,24 +774,45 @@ function toggleVipBenefits(button){
 ========================================================= -->
 
 <nav class="main-menu-animated border-b border-zinc-900">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-start">
-        <button onclick="toggleWartexSideMenu()" id="wartexHomeButton" aria-label="Open site navigation menu" aria-controls="wartexSideMenu" aria-expanded="false" title="Menüyü Aç" class="group inline-flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-950/80 px-3.5 py-2.5 text-xs font-bold text-zinc-200 transition duration-200 hover:border-zinc-600 hover:bg-zinc-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30">
-            <span class="flex h-5 w-5 flex-col justify-center gap-[4px]">
-                <span class="block h-[2px] w-5 rounded-full bg-current transition-all"></span>
-                <span class="block h-[2px] w-3.5 rounded-full bg-current transition-all group-hover:w-5"></span>
-                <span class="block h-[2px] w-5 rounded-full bg-current transition-all"></span>
-            </span>
-            <span>MENÜ</span>
-        </button>
-        <span class="ml-3 text-[10px] font-semibold tracking-[.16em] text-zinc-600 uppercase">Site Navigasyonu</span>
-    </div>
+    <div class="wartex-nav-spacer max-w-7xl mx-auto px-4 py-1"></div>
 </nav>
 
 <!-- =========================================================
      ANA İÇERİK
 ========================================================= -->
 
-<main class="max-w-7xl mx-auto px-4 py-12 flex-grow w-full">
+<aside id="wartexPermanentSidebar" aria-label="Site navigation" class="wartex-permanent-sidebar">
+    <div class="wartex-permanent-brand"><span class="wartex-sidebar-mark"><i class="fa-solid fa-bolt"></i></span><span><b>WARTEX</b><small>SITE NAVIGATION</small></span></div>
+    <div class="wartex-sidebar-section">ANA MENÜ</div>
+    <button class="wartex-permanent-item is-active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-house"></i><span>Ana Sayfa</span></button>
+    <button class="wartex-permanent-item" onclick="openModal('robloxCategoryModal')"><i class="fa-solid fa-gamepad"></i><span>Roblox Hesapları</span></button>
+    <button class="wartex-permanent-item" onclick="openModal('vipDisclaimerModal')"><i class="fa-solid fa-gem"></i><span>VIP Paketler</span></button>
+    <button class="wartex-permanent-item" onclick="openModal('executorExternalModal')"><i class="fa-solid fa-terminal"></i><span>Executorlar / Externallar</span></button>
+    <button class="wartex-permanent-item" onclick="openWartexScriptHub()"><i class="fa-solid fa-code"></i><span>WARTEX Script Hub</span></button>
+    <button class="wartex-permanent-item" onclick="openModal('wartexSpooferModal')"><i class="fa-solid fa-shield-halved"></i><span>Spoofer</span></button>
+    <button class="wartex-permanent-item" onclick="openModal('supportModal')"><i class="fa-solid fa-headset"></i><span>Canlı Destek</span></button>
+    <button class="wartex-permanent-item" onclick="openPaymentProcess()"><i class="fa-solid fa-credit-card"></i><span>Ödeme Süreci</span></button>
+    <div class="wartex-sidebar-bottom"><i class="fa-solid fa-circle-check"></i><span>Sistem Aktif</span><span class="wartex-live-dot"></span></div>
+</aside>
+<style id="wartex-permanent-sidebar-style">
+.wartex-permanent-sidebar{position:fixed;z-index:35;left:0;top:88px;bottom:0;width:244px;padding:18px 13px 14px;background:rgba(7,7,9,.97);border-right:1px solid #27272a;display:flex;flex-direction:column;overflow-y:auto;backdrop-filter:blur(16px)}
+.wartex-permanent-brand{display:flex;align-items:center;gap:10px;padding:5px 7px 20px;border-bottom:1px solid #242428;margin-bottom:17px}
+.wartex-sidebar-mark{width:37px;height:37px;display:flex;align-items:center;justify-content:center;border:1px solid #34343b;border-radius:11px;background:#141417;color:#fff}
+.wartex-permanent-brand b{display:block;font-size:13px;letter-spacing:.15em;font-weight:900;color:#fff}
+.wartex-permanent-brand small{display:block;margin-top:4px;font-size:8px;letter-spacing:.16em;color:#71717a}
+.wartex-sidebar-section{padding:0 9px 9px;font-size:9px;letter-spacing:.18em;font-weight:900;color:#66666f}
+.wartex-permanent-item{width:100%;display:flex;align-items:center;gap:11px;text-align:left;padding:12px 10px;margin-bottom:5px;border:1px solid transparent;border-radius:11px;background:transparent;color:#a1a1aa;font-size:11px;font-weight:700;line-height:1.4;transition:background .18s,border-color .18s,color .18s,transform .18s}
+.wartex-permanent-item i{width:17px;flex:none;text-align:center;font-size:12px;color:#8b8b96}
+.wartex-permanent-item:hover{background:#151518;border-color:#303036;color:#fff;transform:translateX(2px)}
+.wartex-permanent-item:hover i,.wartex-permanent-item.is-active i{color:#fff}
+.wartex-permanent-item.is-active{background:linear-gradient(100deg,#1c1c20,#111113);border-color:#34343b;color:#fff}
+.wartex-sidebar-bottom{display:flex;align-items:center;gap:8px;margin-top:auto;padding:14px 9px 3px;border-top:1px solid #242428;color:#8b8b95;font-size:10px;font-weight:700}
+.wartex-sidebar-bottom>i{color:#22c55e}.wartex-live-dot{width:6px;height:6px;margin-left:auto;border-radius:50%;background:#22c55e;box-shadow:0 0 9px #22c55e80}
+.wartex-nav-spacer{height:1px}
+#wartexMainContent{margin-left:244px!important;margin-right:0!important;max-width:calc(100% - 244px)!important;width:calc(100% - 244px)!important}
+@media(max-width:800px){.wartex-permanent-sidebar{display:none}#wartexMainContent{margin-left:auto!important;margin-right:auto!important;max-width:100%!important;width:100%!important}.wartex-nav-spacer{display:none}}
+</style>
+<main id="wartexMainContent" class="max-w-7xl mx-auto px-4 py-12 flex-grow w-full">
 
 
 <style id="wartex-intro-home-preview-style">
