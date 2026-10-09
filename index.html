@@ -658,17 +658,17 @@
 #wartexIntro .wartex-particles span:nth-child(3n){background:#fff!important;box-shadow:0 0 6px rgba(255,255,255,.25)!important}
 #wartexIntro [class*="purple"],#wartexIntro [style*="#8B5CF6"],#wartexIntro [style*="#8b5cf6"],#wartexIntro [style*="rgb(139, 92, 246)"]{color:#000!important}
 </style><style id="vipPackageDetailsAccordion">
-.vip-benefits-toggle{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;padding:11px 14px;border:1px solid #3f3f46;border-radius:12px;background:#090909;color:#f4f4f5;font-size:11px;font-weight:800;letter-spacing:.08em;transition:background .2s,border-color .2s}
+.vip-benefits-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;max-width:100%;margin-top:10px;padding:7px 11px;border:1px solid #3f3f46;border-radius:9px;background:#090909;color:#f4f4f5;font-size:10px;font-weight:800;letter-spacing:.045em;transition:background .2s,border-color .2s}
 .vip-benefits-toggle:hover{background:#18181b;border-color:#a1a1aa}
-.vip-benefits-toggle .vip-arrow{transition:transform .28s ease}
+.vip-benefits-toggle .vip-arrow{font-size:10px;transition:transform .28s ease}
 .vip-benefits-toggle[aria-expanded="true"] .vip-arrow{transform:rotate(180deg)}
-.vip-benefits-panel{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-6px);transition:grid-template-rows .32s ease,opacity .25s ease,transform .32s ease}
+.vip-benefits-panel{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-4px);transition:grid-template-rows .3s ease,opacity .22s ease,transform .3s ease}
 .vip-benefits-panel.is-open{grid-template-rows:1fr;opacity:1;transform:translateY(0)}
 .vip-benefits-inner{overflow:hidden;min-height:0}
-.vip-benefit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 2px 2px}
-.vip-benefit{display:flex;align-items:flex-start;gap:9px;padding:11px;border:1px solid #27272a;border-radius:10px;background:rgba(255,255,255,.025);color:#d4d4d8;font-size:11px;line-height:1.5}
-.vip-benefit i{color:#fff;margin-top:2px}
-@media(max-width:600px){.vip-benefit-list{grid-template-columns:1fr}.vip-benefit{font-size:12px}}
+.vip-benefit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px 0 1px}
+.vip-benefit{display:flex;align-items:flex-start;gap:9px;padding:10px 11px;border:1px solid #27272a;border-radius:9px;background:rgba(255,255,255,.025);color:#e4e4e7;font-size:12px;line-height:1.55;text-align:left}
+.vip-benefit i{flex:0 0 14px;color:#fff;margin-top:3px;font-size:12px}
+@media(max-width:600px){.vip-benefit-list{grid-template-columns:1fr;gap:7px}.vip-benefit{font-size:13px;padding:10px 12px}}
 </style>
 <script>
 function toggleVipBenefits(button){
@@ -678,7 +678,7 @@ function toggleVipBenefits(button){
  button.setAttribute('aria-expanded',String(opening));
  panel.classList.toggle('is-open',opening);
  const label=button.querySelector('.vip-toggle-label');
- if(label)label.textContent=opening?'HIDE PACKAGE BENEFITS':'VIEW PACKAGE BENEFITS';
+ if(label)label.textContent=opening?'HIDE BENEFITS':'VIEW BENEFITS';
 }
 </script>
 </head>
