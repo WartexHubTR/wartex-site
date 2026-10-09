@@ -9699,6 +9699,11 @@ function wartexCopyScript(script) {
 #wartexIntroSkip{position:absolute;right:22px;top:20px;z-index:100;display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #3f3f46;border-radius:10px;background:rgba(8,8,8,.9);color:#fff;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:background .15s,border-color .15s}
 #wartexIntroSkip:hover{background:#fff;color:#000;border-color:#fff}
 @media(max-width:700px){.wartex-product-grid{grid-template-columns:repeat(2,1fr)}.wartex-product-card{min-height:125px}.products-kicker{font-size:8px}.wartex-products-intro h2{font-size:34px}}
+<style id="wartexIntroSkipVisibleFix">
+#wartexIntro #wartexIntroSkip{position:fixed!important;top:16px!important;right:16px!important;left:auto!important;bottom:auto!important;z-index:2147483647!important;display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;background:#080808!important;color:#fff!important;border:1px solid #777!important;padding:11px 15px!important;border-radius:10px!important;font-weight:900!important;font-size:11px!important;letter-spacing:1px!important;cursor:pointer!important}
+#wartexIntro #wartexIntroSkip:hover{background:#fff!important;color:#000!important}
+@media(max-width:700px){#wartexIntro #wartexIntroSkip{top:10px!important;right:10px!important;padding:10px 12px!important;font-size:10px!important}}
+</style>
 </style>
 <script>
 const WARtexIntroDuration = 8000;
@@ -9712,9 +9717,7 @@ const WARtexIntroDuration = 8000;
             button.type = "button";
             button.innerHTML = '<i class="fa-solid fa-forward"></i><span>SKIP INTRO</span>';
             button.addEventListener("click", function(){
-                intro.style.transition = "opacity .35s ease";
-                intro.style.opacity = "0";
-                setTimeout(function(){ if (intro.parentNode) intro.remove(); }, 350);
+                intro.remove();
             });
             intro.appendChild(button);
         };
