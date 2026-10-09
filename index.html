@@ -870,10 +870,12 @@ function toggleVipBenefits(button){
 
 
 <style id="wartex-intro-home-preview-style">
-/* Scale the actual intro scene as one composition so every title, effect and transition fits the showcase. */
+/* Compact two-column layout: reserve the left tile for a future showcase and keep the current intro on the right. */
 #wartexIntro{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
-.wartex-home-showcase{position:relative;isolation:isolate;overflow:hidden;width:min(100%,620px);height:clamp(310px,38vw,430px);min-height:310px;margin:0 0 34px auto;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:#050506;box-shadow:0 18px 60px rgba(0,0,0,.32);text-align:left}
-.wartex-home-showcase #wartexIntro{position:absolute!important;inset:0 auto auto 0!important;width:161.3%!important;height:161.3%!important;min-height:0!important;max-height:none!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;animation:none!important;transform:scale(.62)!important;transform-origin:top left!important;z-index:1!important;overflow:hidden!important;background:#050506!important}
+.wartex-home-showcase-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch;width:100%;margin:0 0 34px}
+.wartex-home-showcase-reserved{width:100%;height:clamp(250px,27vw,340px);min-height:250px;border:1px dashed rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.012)}
+.wartex-home-showcase{position:relative;isolation:isolate;overflow:hidden;width:100%;height:clamp(250px,27vw,340px);min-height:250px;margin:0;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:#050506;box-shadow:0 18px 60px rgba(0,0,0,.32);text-align:left}
+.wartex-home-showcase #wartexIntro{position:absolute!important;inset:0 auto auto 0!important;width:192.3%!important;height:192.3%!important;min-height:0!important;max-height:none!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;animation:none!important;transform:scale(.52)!important;transform-origin:top left!important;z-index:1!important;overflow:hidden!important;background:#050506!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-skip,.wartex-home-showcase #wartexIntroSkip{display:none!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-bg{position:absolute!important;inset:0!important}
 .wartex-home-showcase #wartexIntro .wartex-loading{display:none!important}
@@ -884,7 +886,9 @@ function toggleVipBenefits(button){
 .wartex-home-showcase #wartexIntro .product-card-4{animation-delay:6.45s!important}
 .wartex-home-showcase #wartexIntro .products-end{animation-delay:6.6s!important}
 @media(max-width:800px){
-.wartex-home-showcase{width:100%;height:330px;min-height:330px;margin:0 auto 26px}
+.wartex-home-showcase-row{grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:26px}
+.wartex-home-showcase-reserved{display:none}
+.wartex-home-showcase{height:330px;min-height:330px}
 .wartex-home-showcase #wartexIntro{width:181.9%!important;height:181.9%!important;transform:scale(.55)!important}
 }
 @media(max-width:430px){
@@ -892,7 +896,10 @@ function toggleVipBenefits(button){
 .wartex-home-showcase #wartexIntro{width:200%!important;height:200%!important;transform:scale(.5)!important}
 }
 </style>
-<section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
+<div class="wartex-home-showcase-row" aria-label="WARTEX showcases">
+  <div class="wartex-home-showcase-reserved" aria-hidden="true"></div>
+  <section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
+</div>
 
 
     <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
