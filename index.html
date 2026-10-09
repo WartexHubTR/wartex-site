@@ -657,7 +657,31 @@
 #wartexIntro .wartex-particles span{background:#a78bfa!important;box-shadow:0 0 7px rgba(167,139,250,.35)!important;opacity:.42!important}
 #wartexIntro .wartex-particles span:nth-child(3n){background:#fff!important;box-shadow:0 0 6px rgba(255,255,255,.25)!important}
 #wartexIntro [class*="purple"],#wartexIntro [style*="#8B5CF6"],#wartexIntro [style*="#8b5cf6"],#wartexIntro [style*="rgb(139, 92, 246)"]{color:#000!important}
-</style></head>
+</style><style id="vipPackageDetailsAccordion">
+.vip-benefits-toggle{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;padding:11px 14px;border:1px solid #3f3f46;border-radius:12px;background:#090909;color:#f4f4f5;font-size:11px;font-weight:800;letter-spacing:.08em;transition:background .2s,border-color .2s}
+.vip-benefits-toggle:hover{background:#18181b;border-color:#a1a1aa}
+.vip-benefits-toggle .vip-arrow{transition:transform .28s ease}
+.vip-benefits-toggle[aria-expanded="true"] .vip-arrow{transform:rotate(180deg)}
+.vip-benefits-panel{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-6px);transition:grid-template-rows .32s ease,opacity .25s ease,transform .32s ease}
+.vip-benefits-panel.is-open{grid-template-rows:1fr;opacity:1;transform:translateY(0)}
+.vip-benefits-inner{overflow:hidden;min-height:0}
+.vip-benefit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 2px 2px}
+.vip-benefit{display:flex;align-items:flex-start;gap:9px;padding:11px;border:1px solid #27272a;border-radius:10px;background:rgba(255,255,255,.025);color:#d4d4d8;font-size:11px;line-height:1.5}
+.vip-benefit i{color:#fff;margin-top:2px}
+@media(max-width:600px){.vip-benefit-list{grid-template-columns:1fr}.vip-benefit{font-size:12px}}
+</style>
+<script>
+function toggleVipBenefits(button){
+ const panel=document.getElementById(button.getAttribute('aria-controls'));
+ if(!panel)return;
+ const opening=button.getAttribute('aria-expanded')!=='true';
+ button.setAttribute('aria-expanded',String(opening));
+ panel.classList.toggle('is-open',opening);
+ const label=button.querySelector('.vip-toggle-label');
+ if(label)label.textContent=opening?'HIDE PACKAGE BENEFITS':'VIEW PACKAGE BENEFITS';
+}
+</script>
+</head>
 
 <body class="min-h-screen flex flex-col selection:bg-indigo-500/30 selection:text-white">
 
@@ -3856,7 +3880,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                             Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-1" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-1" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
@@ -3918,7 +3948,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                             Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-2" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-2" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
@@ -3980,7 +4016,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                            Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-3" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-3" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
@@ -4042,7 +4084,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                            Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-4" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-4" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
@@ -4104,7 +4152,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                             Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-5" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-5" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
@@ -4166,7 +4220,13 @@ window.openModal = function(id) {
                             <i class="fa-brands fa-discord mr-1"></i>
                             Buy Now
 
-                        </a>
+                        </a><button type="button" class="vip-benefits-toggle" aria-expanded="false" aria-controls="vip-benefits-6" onclick="toggleVipBenefits(this)"><i class="fa-solid fa-circle-info"></i><span class="vip-toggle-label">VIEW PACKAGE BENEFITS</span><i class="fa-solid fa-chevron-down vip-arrow"></i></button><div id="vip-benefits-6" class="vip-benefits-panel"><div class="vip-benefits-inner"><div class="vip-benefit-list"><div class="vip-benefit"><i class="fa-solid fa-crown"></i><span>Exclusive role in the WARTEX Discord server</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-headset"></i><span>Fast, priority customer support</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-gift"></i><span>Exclusive profile appearance, gifts, and giveaways</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-bell"></i><span>Priority announcements and early updates</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-server"></i><span>Access to exclusive private servers</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-comments"></i><span>Access to members-only text chat channels</span></div>
+<div class="vip-benefit"><i class="fa-solid fa-microphone"></i><span>Access to exclusive voice channels</span></div></div></div></div>
 
                     </div>
 
