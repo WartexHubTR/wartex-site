@@ -876,6 +876,7 @@ function toggleVipBenefits(button){
 .wartex-home-showcase #wartexIntro{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;animation:none!important;z-index:1!important;overflow:hidden!important;background:#050506!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-skip,.wartex-home-showcase #wartexIntroSkip{display:none!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-bg{position:absolute!important;inset:0!important}
+.wartex-home-showcase #wartexIntro .wartex-scene-three{animation-duration:8s!important}.wartex-home-showcase #wartexIntro .product-card-1{animation-delay:6s!important}.wartex-home-showcase #wartexIntro .product-card-2{animation-delay:6.15s!important}.wartex-home-showcase #wartexIntro .product-card-3{animation-delay:6.3s!important}.wartex-home-showcase #wartexIntro .product-card-4{animation-delay:6.45s!important}.wartex-home-showcase #wartexIntro .products-end{animation-delay:6.6s!important}
 .wartex-home-showcase #wartexIntro .wartex-products-intro{width:94%!important}
 .wartex-home-showcase #wartexIntro .wartex-products-intro h2{font-size:clamp(23px,3.4vw,42px)!important;margin:12px 0 18px!important}
 .wartex-home-showcase #wartexIntro .wartex-product-card{min-height:80px!important;padding:10px 7px!important}
@@ -9902,7 +9903,7 @@ const WARtexIntroDuration = 8000;
       if(button)button.remove();
       applyFrame();
     }
-    window.setInterval(restart,30000);
+    window.setInterval(restart,8000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});
   else mount();
