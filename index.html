@@ -2476,7 +2476,12 @@ window.openModal = function(id) {
 <button onclick="closeModal('executorExternalModal')" class="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-400 hover:bg-white hover:text-black"><i class="fa-solid fa-xmark"></i></button>
 </div>
 <div class="p-5 sm:p-8">
-<div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-[#0d0d0d] p-6 sm:p-8">
+<div class="relative overflow-hidden rounded-3xl border border-violet-500/40 bg-[#0d0d0d] p-6 sm:p-8 shadow-[0_0_35px_rgba(139,92,246,0.12)]">
+<!-- TAM GENİŞLİK ARKA PLAN GÖRSEL ALANI: mevcut sağdaki küçük görsel alanından bağımsızdır. -->
+<div class="pointer-events-none absolute inset-0 rounded-3xl border-2 border-dashed border-violet-400/25 bg-gradient-to-br from-violet-950/25 via-black/30 to-zinc-950/70">
+<div class="absolute right-5 top-5 flex items-center gap-2 rounded-full border border-violet-400/30 bg-black/65 px-3 py-2 text-[9px] font-black uppercase tracking-[.18em] text-violet-200/70"><i class="fa-regular fa-image"></i> FULL BACKGROUND IMAGE SLOT</div>
+<div class="absolute inset-x-0 bottom-4 text-center text-[9px] font-bold uppercase tracking-[.25em] text-zinc-500/50">Geniş arka plan görseli buraya eklenecek</div>
+</div>
 <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/[.025] blur-3xl"></div>
 <div class="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 <div class="max-w-2xl"><div class="mb-3 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-[9px] font-black uppercase tracking-wider text-zinc-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> WARTEX EXECUTOR</div><h2 class="text-4xl font-black tracking-tight sm:text-6xl">WARTEX</h2><p class="mt-4 max-w-xl text-sm leading-7 text-zinc-400">A modern executor experience built for the WARTEX ecosystem with an advanced UI, Key System, and Script Hub.</p>
