@@ -842,6 +842,20 @@ function toggleVipBenefits(button){
 }
 
 
+
+/* Synchronize the embedded intro's 8-second scenes to avoid the 4–5 second overlap. */
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-scene-one,
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-scene-two{animation-duration:8s!important;animation-iteration-count:1!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-scene-three{animation-duration:8s!important;animation-delay:0s!important;animation-iteration-count:1!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-products-intro{width:90%!important;max-width:100%!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-products-intro h2{font-size:clamp(18px,2.6vw,36px)!important;line-height:1.08!important;letter-spacing:-.5px!important;margin:10px 0 14px!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .wartex-product-card{min-width:0!important;min-height:0!important;padding:8px 5px!important;gap:5px!important;animation-duration:.35s!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .product-card-1{animation-delay:6s!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .product-card-2{animation-delay:6.12s!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .product-card-3{animation-delay:6.24s!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .product-card-4{animation-delay:6.36s!important}
+.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .products-end{margin-top:10px!important;font-size:7px!important;letter-spacing:1.5px!important;animation-delay:6.55s!important;animation-duration:.3s!important}
 /* Keep the right-hand intro preview readable inside its smaller card. */
 .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"]{min-width:0;min-height:0}
 .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro{transform-origin:top left!important;contain:layout paint!important}
@@ -1259,15 +1273,6 @@ function toggleVipBenefits(button){
 
 </main>
     <div id="wartexSideMenuOverlay" class="fixed inset-0 z-[999996] hidden bg-black/65" onclick="toggleWartexSideMenu(false)"></div><aside id="wartexSideMenu" class="fixed left-0 top-0 z-[999997] h-full w-[330px] max-w-[88vw] -translate-x-full border-r border-zinc-800 bg-[#080808] text-white shadow-2xl transition-transform duration-300"><div class="flex h-full flex-col"><div class="flex items-center justify-between border-b border-zinc-800 px-5 py-5"><div><div class="text-[10px] font-black uppercase tracking-[.28em] text-zinc-500">WARTEX</div><div class="mt-1 text-lg font-black">Ana Menü</div></div><button onclick="toggleWartexSideMenu(false)" class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-400 hover:bg-white hover:text-black"><i class="fa-solid fa-xmark"></i></button></div><nav class="flex-1 overflow-y-auto p-3">
-<div class="px-2 pb-2 pt-1 text-[9px] font-black uppercase tracking-[.25em] text-zinc-600">SİTE MENÜSÜ</div>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);window.scrollTo({top:0,behavior:'smooth'})"><span class="wartex-side-icon"><i class="fa-solid fa-house"></i></span><span><b>Ana Sayfa</b><small>WARTEX ana sayfasına dön</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openModal('robloxCategoryModal')"><span class="wartex-side-icon"><i class="fa-solid fa-gamepad"></i></span><span><b>Roblox Hesapları</b><small>Roblox hesap kategorileri</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openModal('vipDisclaimerModal')"><span class="wartex-side-icon"><i class="fa-solid fa-gem"></i></span><span><b>VIP Paketler</b><small>VIP paketleri ve ayrıcalıklar</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openModal('executorExternalModal')"><span class="wartex-side-icon"><i class="fa-solid fa-terminal"></i></span><span><b>Executorlar / Externallar</b><small>Executor ürünleri</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openWartexScriptHub()"><span class="wartex-side-icon"><i class="fa-solid fa-code"></i></span><span><b>WARTEX Script Hub</b><small>Script Hub'ı aç</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openModal('wartexSpooferModal')"><span class="wartex-side-icon"><i class="fa-solid fa-shield-halved"></i></span><span><b>Spoofer</b><small>Spoofer bölümü</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openModal('supportModal')"><span class="wartex-side-icon"><i class="fa-solid fa-headset"></i></span><span><b>Canlı Destek</b><small>Destek ekibine ulaş</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
-<button class="wartex-side-item" onclick="toggleWartexSideMenu(false);openPaymentProcess()"><span class="wartex-side-icon"><i class="fa-solid fa-credit-card"></i></span><span><b>Ödeme Süreci</b><small>Ödeme adımlarını incele</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
 <div class="mx-2 my-3 border-t border-zinc-800"></div>
 <div class="px-2 pb-2 pt-1 text-[9px] font-black uppercase tracking-[.25em] text-zinc-600">GENEL</div>
 <button class="wartex-side-item" onclick="wartexOpenRoom('Genel Bakış')"><span class="wartex-side-icon"><i class="fa-solid fa-house"></i></span><span><b>Genel Bakış</b><small>WARTEX genel durumu</small></span><i class="fa-solid fa-chevron-right ml-auto text-[10px]"></i></button>
