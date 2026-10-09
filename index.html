@@ -870,22 +870,27 @@ function toggleVipBenefits(button){
 
 
 <style id="wartex-intro-home-preview-style">
-/* Original WARTEX intro runs inside the home showcase, not as a full-screen gate. */
+/* Scale the actual intro scene as one composition so every title, effect and transition fits the showcase. */
 #wartexIntro{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
 .wartex-home-showcase{position:relative;isolation:isolate;overflow:hidden;width:min(100%,620px);height:clamp(310px,38vw,430px);min-height:310px;margin:0 0 34px auto;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:#050506;box-shadow:0 18px 60px rgba(0,0,0,.32);text-align:left}
-.wartex-home-showcase #wartexIntro{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;animation:none!important;z-index:1!important;overflow:hidden!important;background:#050506!important}
+.wartex-home-showcase #wartexIntro{position:absolute!important;inset:0 auto auto 0!important;width:161.3%!important;height:161.3%!important;min-height:0!important;max-height:none!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;animation:none!important;transform:scale(.62)!important;transform-origin:top left!important;z-index:1!important;overflow:hidden!important;background:#050506!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-skip,.wartex-home-showcase #wartexIntroSkip{display:none!important}
 .wartex-home-showcase #wartexIntro .wartex-intro-bg{position:absolute!important;inset:0!important}
-.wartex-home-showcase #wartexIntro .wartex-scene-three{animation-duration:8s!important}.wartex-home-showcase #wartexIntro .product-card-1{animation-delay:6s!important}.wartex-home-showcase #wartexIntro .product-card-2{animation-delay:6.15s!important}.wartex-home-showcase #wartexIntro .product-card-3{animation-delay:6.3s!important}.wartex-home-showcase #wartexIntro .product-card-4{animation-delay:6.45s!important}.wartex-home-showcase #wartexIntro .products-end{animation-delay:6.6s!important}
-.wartex-home-showcase #wartexIntro .wartex-products-intro{width:94%!important}
-.wartex-home-showcase #wartexIntro .wartex-products-intro h2{font-size:clamp(23px,3.4vw,42px)!important;margin:12px 0 18px!important}
-.wartex-home-showcase #wartexIntro .wartex-product-card{min-height:80px!important;padding:10px 7px!important}
-.wartex-home-showcase #wartexIntro .product-icon{width:30px!important;height:30px!important}
-.wartex-home-showcase #wartexIntro .wartex-product-card b{font-size:10px!important}
-.wartex-home-showcase #wartexIntro .wartex-product-card span{font-size:8px!important}
 .wartex-home-showcase #wartexIntro .wartex-loading{display:none!important}
-@media(max-width:800px){.wartex-home-showcase{width:100%;height:330px;min-height:330px;margin:0 auto 26px}.wartex-home-showcase #wartexIntro .wartex-executor-right{display:none!important}.wartex-home-showcase #wartexIntro .wartex-executor-side{left:12px!important;width:calc(100% - 24px)!important;top:45%!important}.wartex-home-showcase #wartexIntro .wartex-script-float{width:145px!important;padding:6px!important}.wartex-home-showcase #wartexIntro .wartex-script-float strong{font-size:7px!important}}
-@media(max-width:430px){.wartex-home-showcase{height:300px;min-height:300px}.wartex-home-showcase #wartexIntro .wartex-logo-title{font-size:26px!important}.wartex-home-showcase #wartexIntro .wartex-script-float{width:118px!important}.wartex-home-showcase #wartexIntro .wartex-script-float span{font-size:6px!important}}
+.wartex-home-showcase #wartexIntro .wartex-scene-three{animation-duration:8s!important}
+.wartex-home-showcase #wartexIntro .product-card-1{animation-delay:6s!important}
+.wartex-home-showcase #wartexIntro .product-card-2{animation-delay:6.15s!important}
+.wartex-home-showcase #wartexIntro .product-card-3{animation-delay:6.3s!important}
+.wartex-home-showcase #wartexIntro .product-card-4{animation-delay:6.45s!important}
+.wartex-home-showcase #wartexIntro .products-end{animation-delay:6.6s!important}
+@media(max-width:800px){
+.wartex-home-showcase{width:100%;height:330px;min-height:330px;margin:0 auto 26px}
+.wartex-home-showcase #wartexIntro{width:181.9%!important;height:181.9%!important;transform:scale(.55)!important}
+}
+@media(max-width:430px){
+.wartex-home-showcase{height:300px;min-height:300px}
+.wartex-home-showcase #wartexIntro{width:200%!important;height:200%!important;transform:scale(.5)!important}
+}
 </style>
 <section class="wartex-home-showcase" aria-label="Original WARTEX animated intro preview"><div class="wartex-home-showcase-placeholder" style="position:absolute;inset:0;display:grid;place-items:center;color:#71717a;font:800 10px Inter,sans-serif;letter-spacing:.2em">WARTEX INTRO LOADING…</div></section>
 
