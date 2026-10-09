@@ -868,6 +868,51 @@ function toggleVipBenefits(button){
 
 <main class="max-w-7xl mx-auto px-4 py-12 flex-grow w-full">
 
+
+<style id="wartex-intro-home-preview-style">
+/* Experimental home-page intro preview — the full-screen intro is disabled, not deleted. */
+#wartexIntro{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+.wartex-home-showcase{position:relative;isolation:isolate;overflow:hidden;width:min(100%,520px);min-height:230px;margin:0 0 34px auto;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.10),transparent 48%),linear-gradient(145deg,#111113,#050506 72%);box-shadow:0 18px 60px rgba(0,0,0,.32);text-align:left}
+.wartex-home-showcase:before{content:"";position:absolute;inset:-40%;z-index:-1;background:conic-gradient(from 0deg,transparent 0 68%,rgba(255,255,255,.10) 78%,transparent 88%);animation:wartexPreviewSweep 12s linear infinite}
+.wartex-home-showcase:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px),radial-gradient(circle,#aaa 1px,transparent 1.5px);background-size:53px 53px,79px 79px;background-position:0 0,24px 31px;animation:wartexPreviewParticles 15s linear infinite}
+.wartex-home-showcase-content{position:relative;padding:24px 24px 20px}
+.wartex-preview-topline{display:flex;align-items:center;gap:8px;color:#a1a1aa;font-size:9px;font-weight:800;letter-spacing:.2em}
+.wartex-preview-live{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 12px rgba(255,255,255,.9);animation:wartexPreviewPulse 1.8s ease-in-out infinite}
+.wartex-preview-brand{display:flex;align-items:center;gap:15px;margin:24px 0 18px}
+.wartex-preview-logo{display:grid;place-items:center;flex:0 0 58px;width:58px;height:58px;border:1px solid #45454b;border-radius:15px;background:linear-gradient(145deg,#202024,#080809);box-shadow:0 0 28px rgba(255,255,255,.08);animation:wartexPreviewFloat 3.2s ease-in-out infinite}
+.wartex-preview-logo img{width:36px;height:36px;object-fit:contain;filter:grayscale(1)}
+.wartex-preview-wordmark{font-size:clamp(25px,4vw,37px);font-weight:950;line-height:.95;letter-spacing:-.06em;color:#fff}
+.wartex-preview-wordmark span{display:block;margin-top:7px;font-size:10px;letter-spacing:.32em;color:#a1a1aa}
+.wartex-preview-description{max-width:370px;color:#a1a1aa;font-size:11px;line-height:1.7}
+.wartex-preview-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid #27272a}
+.wartex-preview-tags{display:flex;flex-wrap:wrap;gap:6px}
+.wartex-preview-tags span{padding:6px 8px;border:1px solid #333338;border-radius:7px;background:rgba(255,255,255,.035);font-size:8px;font-weight:800;letter-spacing:.04em;color:#e4e4e7}
+.wartex-preview-loop{display:flex;align-items:center;gap:7px;color:#71717a;font-size:8px;font-weight:800;letter-spacing:.1em;white-space:nowrap}
+.wartex-preview-loop i{animation:wartexPreviewSpin 3s linear infinite}
+@keyframes wartexPreviewSweep{to{transform:rotate(360deg)}}
+@keyframes wartexPreviewParticles{to{background-position:106px 106px,-55px 110px}}
+@keyframes wartexPreviewPulse{50%{opacity:.35;box-shadow:0 0 3px rgba(255,255,255,.4)}}
+@keyframes wartexPreviewFloat{50%{transform:translateY(-4px) scale(1.025)}}
+@keyframes wartexPreviewSpin{to{transform:rotate(360deg)}}
+@media(max-width:640px){.wartex-home-showcase{width:100%;margin:0 auto 26px;min-height:215px}.wartex-home-showcase-content{padding:20px}.wartex-preview-bottom{align-items:flex-start;flex-direction:column}.wartex-preview-loop{align-self:flex-end}}
+@media(prefers-reduced-motion:reduce){.wartex-home-showcase:before,.wartex-home-showcase:after,.wartex-preview-live,.wartex-preview-logo,.wartex-preview-loop i{animation:none!important}}
+</style>
+<section class="wartex-home-showcase" aria-label="WARTEX animated home showcase">
+  <div class="wartex-home-showcase-content">
+    <div class="wartex-preview-topline"><span class="wartex-preview-live"></span> WARTEX NETWORK <span style="opacity:.45">/</span> ALWAYS ON</div>
+    <div class="wartex-preview-brand">
+      <div class="wartex-preview-logo"><img src="/wartex_logo.png" alt="WARTEX logo" onerror="this.onerror=null;this.src='/favicon.png'"></div>
+      <div class="wartex-preview-wordmark">WARTEX<span>SCRIPT HUB · EXECUTOR</span></div>
+    </div>
+    <p class="wartex-preview-description">Your Roblox script destination. Explore the hub, discover updates, and stay connected with the WARTEX community.</p>
+    <div class="wartex-preview-bottom">
+      <div class="wartex-preview-tags"><span><i class="fa-solid fa-code"></i> SCRIPT HUB</span><span><i class="fa-solid fa-bolt"></i> EXECUTOR</span><span><i class="fa-brands fa-discord"></i> COMMUNITY</span></div>
+      <div class="wartex-preview-loop"><i class="fa-solid fa-arrows-rotate"></i> LOOPING PREVIEW</div>
+    </div>
+  </div>
+</section>
+
+
     <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
 
         <h1 class="text-3xl sm:text-4xl font-black tracking-tight
