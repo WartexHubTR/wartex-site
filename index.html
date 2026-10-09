@@ -9946,7 +9946,7 @@ const WARtexIntroDuration = 8000;
 (function(){
   function mount(){
     const intro=document.getElementById('wartexIntro');
-    const showcase=document.querySelector('.wartex-home-showcase');
+    const showcase=document.querySelector('.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"]');
     if(!intro||!showcase||intro.dataset.homeLoopReady==='1')return;
     intro.dataset.homeLoopReady='1';
     const placeholder=showcase.querySelector('.wartex-home-showcase-placeholder');
