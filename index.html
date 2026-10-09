@@ -925,14 +925,6 @@ function toggleVipBenefits(button){
  .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .executor-big-title{font-size:clamp(16px,5vw,23px)!important}
  .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"] #wartexIntro .executor-footer{letter-spacing:.5px!important}
 }
-/* Run the WARTEX Store showcase and the right-side intro one after the other to prevent animation collisions. */
-.wartex-home-showcase-row > .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"]{visibility:hidden;opacity:0;transition:opacity .25s ease,visibility .25s ease}
-.wartex-home-showcase-row.wartex-intro-active > .wartex-home-showcase[aria-label="Original WARTEX animated intro preview"]{visibility:visible;opacity:1}
-.wartex-home-showcase-row.wartex-intro-active > .wartex-store-showcase{visibility:hidden!important;opacity:0!important}
-.wartex-home-showcase-row.wartex-intro-active > .wartex-store-showcase,
-.wartex-home-showcase-row.wartex-intro-active > .wartex-store-showcase *,
-.wartex-home-showcase-row.wartex-intro-active > .wartex-store-showcase:before,
-.wartex-home-showcase-row.wartex-intro-active > .wartex-store-showcase:after{animation-play-state:paused!important}
 /* Matching WARTEX services showcase */
 /* Cinematic intro-like motion for WARTEX STORE: timed reveals, scanning light, floating panels and transition flashes. */
 /* Match the right-side intro: three timed scenes, cinematic reveals, light sweeps and a transition flash. */
@@ -10125,8 +10117,7 @@ const WARtexIntroDuration = 8000;
   function mount(){
     const intro=document.getElementById('wartexIntro');
     const showcase=document.querySelector('.wartex-home-showcase[aria-label="Original WARTEX animated intro preview"]');
-    const row=document.querySelector('.wartex-home-showcase-row[aria-label="WARTEX showcases"]');
-    if(!intro||!showcase||!row||intro.dataset.homeLoopReady==='1')return;
+    if(!intro||!showcase||intro.dataset.homeLoopReady==='1')return;
     intro.dataset.homeLoopReady='1';
     const placeholder=showcase.querySelector('.wartex-home-showcase-placeholder');
     if(placeholder)placeholder.remove();
@@ -10145,33 +10136,7 @@ const WARtexIntroDuration = 8000;
       if(button)button.remove();
       applyFrame();
     }
-    function sequence(){
-      if(!document.body.contains(intro))return;
-      /* Let the Store finish its three scenes first; then show the intro by itself. */
-      row.classList.remove('wartex-intro-active');
-      window.setTimeout(function(){
-        if(!document.body.contains(intro))return;
-        restart();
-        row.classList.add('wartex-intro-active');
-        window.setTimeout(function(){
-          if(!document.body.contains(intro))return;
-          row.classList.remove('wartex-intro-active');
-          sequence();
-        },8000);
-      },24000);
-    }
-    /* Start the store first; intro starts after its full 24-second cycle. */
-    row.classList.remove('wartex-intro-active');
-    window.setTimeout(function(){
-      if(!document.body.contains(intro))return;
-      restart();
-      row.classList.add('wartex-intro-active');
-      window.setTimeout(function(){
-        if(!document.body.contains(intro))return;
-        row.classList.remove('wartex-intro-active');
-        sequence();
-      },8000);
-    },24000);
+    window.setInterval(restart,8000);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});
   else mount();
