@@ -10151,5 +10151,35 @@ const WARtexIntroDuration = 8000;
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});
   else mount();
 })();
-</script></body>
+</script>
+<style id="wartex-category-opening-animations">
+@keyframes wartexRoomBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wartexRoomPanelIn {
+  0% { opacity: 0; transform: translateY(18px) scale(.975); filter: blur(3px); }
+  70% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+div[id$="Modal"].fixed.inset-0:not(.hidden),
+#wartexRoom.fixed.inset-0:not(.hidden) {
+  animation: wartexRoomBackdropIn .24s ease-out both;
+}
+div[id$="Modal"].fixed.inset-0:not(.hidden) > div,
+#wartexRoom.fixed.inset-0:not(.hidden) > div {
+  transform-origin: center;
+  animation: wartexRoomPanelIn .38s cubic-bezier(.2,.75,.25,1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  div[id$="Modal"].fixed.inset-0:not(.hidden),
+  div[id$="Modal"].fixed.inset-0:not(.hidden) > div,
+  #wartexRoom.fixed.inset-0:not(.hidden),
+  #wartexRoom.fixed.inset-0:not(.hidden) > div {
+    animation-duration: .01ms !important;
+  }
+}
+</style>
+
+</body>
 </html>
